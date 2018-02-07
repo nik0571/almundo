@@ -14,7 +14,7 @@
     <meta name="keywords" content="" />
     <meta name="author" content="Naycool Gonzalez" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-    <title>almundo.com</title>
+    <title>{{title}} | almundo.com</title>
     <script src="http://livejs.com/live.js"></script>
 
     <!-- Base main -->
@@ -26,12 +26,11 @@
   </head>
 
   <body>
-
-    <div ng-view></div>
+    <main-header></main-header>
+    <div id="main-container" ng-view></div>
 
     <!-- Script bower_components -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-aria/angular-aria.min.js"></script>
@@ -41,11 +40,8 @@
 
     <!-- App Script -->
     <script src="scripts/app.min.js"></script>
-    <!-- <script src="scripts/routes.min.js"></script> -->
-    <!-- <script src="scripts/services.min.js"></script> -->
-    <!-- <script src="scripts/directives.min.js"></script> -->
-    <!-- <script src="scripts/filters.min.js"></script> -->
-    <!-- <script src="scripts/factories.min.js"></script> -->
+    <script src="scripts/routes.min.js"></script>
+    <script src="scripts/directives.min.js"></script>
 
   </body>
 
