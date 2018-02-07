@@ -16,7 +16,6 @@ body {
 }
 
 #home {
-  // border: 2px solid red;
   display: block;
   width: calc(100% - 60px);
   margin: 30px auto;
@@ -61,6 +60,7 @@ body {
       font-weight: $font-bold;
       background-color: $bg;
       padding: $padding;
+      position: relative;
 
       .inputs {
         margin: 10px auto;
@@ -91,16 +91,51 @@ body {
       font-weight: $font-bold;
       background-color: $bg;
       padding: $padding;
+      position: relative;
+
       > .container {
         margin-top: 20px;
         label {
           display: block;
           margin-bottom: 15px;
+          cursor: pointer;
           svg {
             fill: $color_7;
           }
         }
       }
+    }
+
+    .toggle {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        text-align: center;
+        width: 0;
+        height: 0;
+        border-bottom: 6px solid $color_6;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+
+      &.hide {
+        &:after {
+          content: '';
+          border-bottom: none;
+          border-top: 6px solid $color_6;
+        }
+      }
+    }
+    .toggle.hide + .container-toggle {
+      display: none;
     }
   }
 
@@ -110,19 +145,34 @@ body {
     margin-left: 12px;
 
     .hotel {
-      $tam_image: 350px;
+      $pad: 10px;
+      $tam_image: 300px;
       background-color: $color_1;
-      padding: 10px;
+      padding: $pad;
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      font-size: .7em;
+      margin-bottom: 15px;
+      box-shadow: 0px 0px 3px 0px rgba(115,110,115,.4);
+
       .row {
         display: inline-block;
         vertical-align: top;
 
         &.image {
           width: $tam_image;
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
         }
         &.info {
-          width: calc(60% - (#{$tam_image} / 2 + 5px));
-          padding: 0 10px;
+          width: calc(55% - (#{$tam_image} / 2 + 5px));
+          padding: 0 20px;
+          color: $color_6;
+          font-size: .8em;
 
           .stars {
             svg {
@@ -139,10 +189,57 @@ body {
         }
         &.price {
           text-align: center;
-          position: relative;
-          border: 1px solid blue;
-          width: calc(40% - (#{$tam_image} / 2 + 5px));
+          width: calc(45% - (#{$tam_image} / 2 + 5px));
           color: $color_8;
+          height: calc(100% - #{$pad * 2});
+          position: absolute;
+          padding: 25px;
+
+          p:first-child {
+            width: 80%;
+            display: block;
+            margin: auto;
+          }
+
+          &:before {
+            content: '';
+            display: block;
+            width: 0;
+            min-height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-left: 1px dashed $color_9;
+          }
+
+          .special {
+            display: block;
+            color: $color_10;
+            font-size: 2em;
+            margin-top: 20px;
+
+            strong,
+            span {
+              display: inline-block;
+              margin: 0 5px;
+              vertical-align: middle;
+            }
+            span {
+              font-weight: $font-light;
+            }
+            strong {
+              font-size: 1.6em;
+            }
+
+          }
+
+          button {
+            font-size: 1.5em;
+            display: block;
+            margin: 15px auto;
+            width: 100%;
+            padding: 10px 5px;
+          }
         }
       }
     }
