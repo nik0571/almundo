@@ -5,8 +5,96 @@
  * @description Estilos generales de la pagina
  */
 
+body {
+  background-color: $color_3;
+}
 
 #main-header {
   background-color: $color_4;
   padding: 20px 10px;
+  display: block;
+}
+
+#home {
+  // border: 2px solid red;
+  display: block;
+  width: calc(100% - 60px);
+  margin: 30px auto;
+  position: relative;
+
+  .filter {
+    $bg: $color_1;
+    $padding: 15px 20px;
+    display: inline-block;
+    width: 400px;
+
+    h3 {
+      font-size: 1.2em;
+      background-color: $bg;
+      margin-bottom: 5px;
+      padding: $padding;
+    }
+
+    label.title {
+      vertical-align: middle;
+      color: $color_6;
+    }
+
+    .icon-star,
+    .icon-search {
+      vertical-align: middle;
+      margin-right: 5px;
+      svg {
+        width: 20px;
+        fill: $color_6;
+      }
+    }
+
+    .form {
+      font-weight: $font-bold;
+      background-color: $bg;
+      padding: $padding;
+
+      .inputs {
+        margin: 10px auto;
+
+        button,
+        input {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        input {
+          width: calc(100% - 110px);
+          padding: 10px;
+          font-size: 1em;
+          margin-right: 10px;
+        }
+
+        button {
+          padding: 7px 8px;
+          font-size: 1.2em;
+        }
+
+      }
+    }
+
+    .top-score {
+      margin-top: 5px;
+      font-weight: $font-bold;
+      background-color: $bg;
+      padding: $padding;
+      > .container {
+        margin-top: 20px;
+        label {
+          display: block;
+          margin-bottom: 15px;
+          svg {
+            fill: $color_7;
+          }
+        }
+      }
+    }
+  }
+
 }

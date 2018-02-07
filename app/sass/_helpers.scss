@@ -7,6 +7,13 @@
  * Description: Clases ayudantes
 ****************************************************/
 
+button {
+  background-color: $color_5;
+  border-radius: 3px;
+  color: $color_1;
+  cursor: pointer;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
