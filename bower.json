@@ -1,0 +1,23 @@
+{
+  "name": "almundo",
+  "description": "Examen de desarrollo Frontend",
+  "main": "app/index.html",
+  "authors": [
+    "Naycool Gonzalez <naycoolgonzalez@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "examen",
+    "desarrollo",
+    "frontend"
+  ],
+  "homepage": "https://github.com/nik0571/almundo",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

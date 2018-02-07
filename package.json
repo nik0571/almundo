@@ -1,0 +1,24 @@
+{
+  "name": "almundo",
+  "version": "1.0.0",
+  "description": "Examen de desarrollo Frontend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nik0571/almundo.git"
+  },
+  "keywords": [
+    "examen",
+    "desarrollo",
+    "frontend"
+  ],
+  "author": "Naycool Gonzalez <naycoolgonzalez@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nik0571/almundo/issues"
+  },
+  "homepage": "https://github.com/nik0571/almundo#readme"
+}
