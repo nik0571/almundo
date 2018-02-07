@@ -60,4 +60,28 @@
 
     </div>
   </aside>
+
+  <div class="container container-hotels">
+    <div class="hotel">
+      <div class="row image">
+        <img src="images/hotels/00650d24_b.jpg" alt="Hotel demo">
+      </div>
+      <div class="row info">
+        <h2>Hotel Stefanos</h2>
+        <div class="container stars">
+          <ng-include src="'icons/filters/star.svg'" ng-repeat="x in [1,2,3]"></ng-include>
+        </div>
+        <div class="container amenities">
+          <img src="icons/amenities/restaurant.svg" width="25" alt="restaurant">
+          <img src="icons/amenities/sheets.svg" width="25" alt="sheets">
+          <img src="icons/amenities/business-center.svg" width="25" alt="business-center">
+        </div>
+      </div>
+      <div class="row price">
+        <p>Precio por noche por habitación</p>
+        <span>ARS <strong>863</strong></span>
+        <button class="button">Ver hotel</button>
+      </div>
+    </div>
+  </div>
 </section>

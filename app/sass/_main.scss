@@ -22,11 +22,18 @@ body {
   margin: 30px auto;
   position: relative;
 
+  $bg: $color_1;
+  $padding: 15px 20px;
+  $tam_filter: 350px;
+
+  .container-hotels,
   .filter {
-    $bg: $color_1;
-    $padding: 15px 20px;
+    vertical-align: top;
     display: inline-block;
-    width: 400px;
+  }
+
+  .filter {
+    width: $tam_filter;
 
     h3 {
       font-size: 1.2em;
@@ -95,6 +102,51 @@ body {
         }
       }
     }
+  }
+
+  .container-hotels {
+    display: inline-block;
+    width: calc(100% - (#{$tam_filter} + 20px));
+    margin-left: 12px;
+
+    .hotel {
+      $tam_image: 350px;
+      background-color: $color_1;
+      padding: 10px;
+      .row {
+        display: inline-block;
+        vertical-align: top;
+
+        &.image {
+          width: $tam_image;
+        }
+        &.info {
+          width: calc(60% - (#{$tam_image} / 2 + 5px));
+          padding: 0 10px;
+
+          .stars {
+            svg {
+              width: 20px;
+              fill: $color_7;
+            }
+            margin: 10px auto;
+          }
+          .amenities {
+            img {
+              margin: 0 5px;
+            }
+          }
+        }
+        &.price {
+          text-align: center;
+          position: relative;
+          border: 1px solid blue;
+          width: calc(40% - (#{$tam_image} / 2 + 5px));
+          color: $color_8;
+        }
+      }
+    }
+
   }
 
 }
