@@ -1,74 +1,81 @@
 <section id="home" class="container">
   <aside class="filter">
     <h3>Filtros</h3>
-    <div class="container form">
-      <ng-include src="'icons/filters/search.svg'" class="icon-search"></ng-include>
-      <label class="title">Nombre del hotel</label>
-      <button
-        type="button"
-        class="toggle"
-        ng-class="{'hide':hideInputs}"
-        ng-click="hideInputs = !hideInputs">
-      </button>
-      <div class="container container-toggle inputs">
-        <input type="text" ng-model="hotel" placeholder="Ingrese el nombre del hotel">
-        <button class="button" ng-click="vm.search">Aceptar</button>
+    <button
+      type="button"
+      class="toggle hide-filters"
+      ng-class="{'hide':hidefilters}"
+      ng-click="hidefilters = !hidefilters">
+      Filtrar
+    </button>
+    <div class="container container-toggle-filter">
+      <div class="container form">
+        <ng-include src="'icons/filters/search.svg'" class="icon-search"></ng-include>
+        <label class="title">Nombre del hotel</label>
+        <button
+          type="button"
+          class="toggle"
+          ng-class="{'hide':hideInputs}"
+          ng-click="hideInputs = !hideInputs">
+        </button>
+        <div class="container container-toggle inputs">
+          <input type="text" ng-model="hotel" placeholder="Ingrese el nombre del hotel">
+          <button class="button" ng-click="vm.search">Aceptar</button>
+        </div>
       </div>
-    </div>
-    <div class="container top-score">
-      <ng-include src="'icons/filters/star.svg'" class="icon-star"></ng-include>
-      <label class="title">Estrellas</label>
-      <button
-        type="button"
-        class="toggle"
-        ng-class="{'hide':hideCheckbox}"
-        ng-click="hideCheckbox = !hideCheckbox">
-      </button>
-      <div class="container container-toggle checkbox">
-        <label>
-          <input
-            type="checkbox"
-            name="allStar">
-          <span>Todas las estrellas</span>
-        </label>
+      <div class="container top-score">
+        <ng-include src="'icons/filters/star.svg'" class="icon-star"></ng-include>
+        <label class="title">Estrellas</label>
+        <button
+          type="button"
+          class="toggle"
+          ng-class="{'hide':hideCheckbox}"
+          ng-click="hideCheckbox = !hideCheckbox">
+        </button>
+        <div class="container container-toggle checkbox">
+          <label>
+            <input
+              type="checkbox"
+              name="allStar">
+            <span>Todas las estrellas</span>
+          </label>
 
-        <label>
-          <input
-            type="checkbox"
-            name="allStar">
-          <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1,2,3,4,5]"></ng-include>
-        </label>
+          <label>
+            <input
+              type="checkbox"
+              name="allStar">
+            <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1,2,3,4,5]"></ng-include>
+          </label>
 
-        <label>
-          <input
-            type="checkbox"
-            name="allStar">
-          <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1,2,3,4]"></ng-include>
-        </label>
+          <label>
+            <input
+              type="checkbox"
+              name="allStar">
+            <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1,2,3,4]"></ng-include>
+          </label>
 
-        <label>
-          <input
-            type="checkbox"
-            name="allStar">
-          <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1,2,3]"></ng-include>
-        </label>
+          <label>
+            <input
+              type="checkbox"
+              name="allStar">
+            <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1,2,3]"></ng-include>
+          </label>
 
-        <label>
-          <input
-            type="checkbox"
-            name="allStar">
-          <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1,2]"></ng-include>
-        </label>
+          <label>
+            <input
+              type="checkbox"
+              name="allStar">
+            <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1,2]"></ng-include>
+          </label>
 
-        <label>
-          <input
-            type="checkbox"
-            name="allStar">
-          <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1]"></ng-include>
-        </label>
-
+          <label>
+            <input
+              type="checkbox"
+              name="allStar">
+            <ng-include src="'icons/filters/star.svg'" class="icon-star" ng-repeat="x in [1]"></ng-include>
+          </label>
+        </div>
       </div>
-
     </div>
   </aside>
 

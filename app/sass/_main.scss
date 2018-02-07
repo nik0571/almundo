@@ -11,54 +11,58 @@ body {
 
 #main-header {
   background-color: $color_4;
-  padding: 20px 10px;
   display: block;
+  padding: 20px 10px;
 }
 
 #home {
-  display: block;
-  width: calc(100% - 60px);
-  margin: 30px auto;
-  position: relative;
-
   $bg: $color_1;
   $padding: 15px 20px;
   $tam_filter: 350px;
 
+  display: block;
+  margin: 30px auto;
+  position: relative;
+  width: calc(100% - 60px);
+
   .container-hotels,
   .filter {
-    vertical-align: top;
     display: inline-block;
+    vertical-align: top;
   }
 
   .filter {
     width: $tam_filter;
 
+    .hide-filters {
+      display: none;
+    }
+
     h3 {
-      font-size: 1.2em;
       background-color: $bg;
+      font-size: 1.2em;
       margin-bottom: 5px;
       padding: $padding;
     }
 
     label.title {
-      vertical-align: middle;
       color: $color_6;
+      vertical-align: middle;
     }
 
     .icon-star,
     .icon-search {
-      vertical-align: middle;
       margin-right: 5px;
+      vertical-align: middle;
       svg {
-        width: 20px;
         fill: $color_6;
+        width: 20px;
       }
     }
 
     .form {
-      font-weight: $font-bold;
       background-color: $bg;
+      font-weight: $font-bold;
       padding: $padding;
       position: relative;
 
@@ -72,34 +76,36 @@ body {
         }
 
         input {
-          width: calc(100% - 110px);
-          padding: 10px;
           font-size: 1em;
           margin-right: 10px;
+          padding: 10px;
+          width: calc(100% - 110px);
         }
 
         button {
-          padding: 7px 8px;
           font-size: 1.2em;
+          padding: 7px 8px;
         }
 
       }
     }
 
     .top-score {
-      margin-top: 5px;
-      font-weight: $font-bold;
       background-color: $bg;
+      font-weight: $font-bold;
+      margin-top: 5px;
       padding: $padding;
       position: relative;
 
       > .container {
         margin-top: 20px;
+
         label {
+          cursor: pointer;
           display: block;
           margin-bottom: 15px;
-          cursor: pointer;
           svg {
+
             fill: $color_7;
           }
         }
@@ -107,23 +113,23 @@ body {
     }
 
     .toggle {
-      display: block;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 20px;
-      height: 20px;
       background-color: transparent;
+      display: block;
+      height: 20px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 20px;
 
       &:after {
-        content: '';
-        display: inline-block;
-        text-align: center;
-        width: 0;
-        height: 0;
         border-bottom: 6px solid $color_6;
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
+        content: '';
+        display: inline-block;
+        height: 0;
+        text-align: center;
+        width: 0;
       }
 
       &.hide {
@@ -141,20 +147,21 @@ body {
 
   .container-hotels {
     display: inline-block;
-    width: calc(100% - (#{$tam_filter} + 20px));
     margin-left: 12px;
+    width: calc(100% - (#{$tam_filter} + 20px));
 
     .hotel {
       $pad: 10px;
       $tam_image: 300px;
+
       background-color: $color_1;
+      box-shadow: 0px 0px 3px 0px rgba(115,110,115,.4);
+      font-size: .7em;
+      height: 100%;
+      margin-bottom: 15px;
+      overflow: hidden;
       padding: $pad;
       position: relative;
-      height: 100%;
-      overflow: hidden;
-      font-size: .7em;
-      margin-bottom: 15px;
-      box-shadow: 0px 0px 3px 0px rgba(115,110,115,.4);
 
       .row {
         display: inline-block;
@@ -162,24 +169,26 @@ body {
 
         &.image {
           width: $tam_image;
+
           img {
             display: block;
-            width: 100%;
             height: auto;
+            width: 100%;
           }
         }
         &.info {
-          width: calc(55% - (#{$tam_image} / 2 + 5px));
-          padding: 0 20px;
           color: $color_6;
           font-size: .8em;
+          padding: 0 20px;
+          width: calc(55% - (#{$tam_image} / 2 + 5px));
 
           .stars {
-            svg {
-              width: 20px;
-              fill: $color_7;
-            }
             margin: 10px auto;
+
+            svg {
+              fill: $color_7;
+              width: 20px;
+            }
           }
           .amenities {
             img {
@@ -188,33 +197,33 @@ body {
           }
         }
         &.price {
-          text-align: center;
-          width: calc(45% - (#{$tam_image} / 2 + 5px));
           color: $color_8;
           height: calc(100% - #{$pad * 2});
-          position: absolute;
           padding: 25px;
+          position: absolute;
+          text-align: center;
+          width: calc(45% - (#{$tam_image} / 2 + 5px));
 
           p:first-child {
-            width: 80%;
             display: block;
             margin: auto;
+            width: 80%;
           }
 
           &:before {
+            border-left: 1px dashed $color_9;
             content: '';
             display: block;
-            width: 0;
+            left: 0;
             min-height: 100%;
             position: absolute;
-            left: 0;
             top: 0;
-            border-left: 1px dashed $color_9;
+            width: 0;
           }
 
           .special {
-            display: block;
             color: $color_10;
+            display: block;
             font-size: 2em;
             margin-top: 20px;
 
@@ -234,16 +243,102 @@ body {
           }
 
           button {
-            font-size: 1.5em;
             display: block;
+            font-size: 1.5em;
             margin: 15px auto;
-            width: 100%;
             padding: 10px 5px;
+            width: 100%;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        .row {
+          &.info {
+            width: calc(50% - (#{$tam_image} / 2 + 5px));
+          }
+          &.price {
+            width: calc(50% - (#{$tam_image} / 2 + 5px));
           }
         }
       }
     }
 
+  }
+
+  @media screen and (max-width: 1200px) {
+
+    .filter {
+      margin-bottom: 10px;
+      width: 100%;
+      > h3 {
+        color: transparent;
+      }
+
+      .hide-filters {
+        color: $color_6;
+        display: block;
+        font-size: 1.2em;
+        width: 100%;
+
+        &:after {
+          border-bottom: 6px solid $color_6;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          content: '';
+          display: inline-block;
+          height: 0;
+          margin-left: 15px;
+          position: absolute;
+          text-align: center;
+          top: 10px;
+          width: 0;
+        }
+
+      }
+      .hide-filters.hide + .container-toggle-filter {
+        display: none;
+      }
+    }
+
+    .container-hotels {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .container-hotels {
+      width: 100%;
+      display: block;
+
+      .hotel {
+        .row {
+          display: block;
+          margin: auto;
+          max-width: 320px;
+
+          &.image {
+            margin-left: auto;
+            margin-right: auto;
+          }
+          &.info {
+            padding: 10px;
+            width: 100%;
+          }
+          &.price {
+            position: relative;
+            width: 100%;
+
+            &:before {
+              border-top: 1px dashed $color_9;
+              min-height: auto;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 
 }
