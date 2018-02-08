@@ -9,7 +9,7 @@
   * Version de la app
   * @description Variable para evitar el captcha de los archivos
   */
-var vApp = '?201802070954';
+var vApp = '?201802081647';
 
 (function () {
   'use strict';
