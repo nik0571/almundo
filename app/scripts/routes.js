@@ -21,7 +21,9 @@
       $routeProvider
         .when('/', {
           title: "Inicio",
-          templateUrl: "views/home.html" + vApp
+          templateUrl: "views/home.html" + vApp,
+          controller: "homeCtrl",
+          controllerAs: "vm"
         })
         .when('/404', {
           title: "Error 404",
