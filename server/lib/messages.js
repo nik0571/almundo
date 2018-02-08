@@ -10,7 +10,7 @@ var messages = {
     success: {
       "loadHotels": "Hoteles cargados!",
     },
-    error: {
+    errors: {
       "loadHotels": "No se encontraron hoteles, Por favor intente nuevamente!",
     }
   }

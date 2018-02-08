@@ -26,8 +26,15 @@ app
     if(Helpers.emptyDatas(req.query.score) || (req.query.name !== undefined && req.query.name !== "")) {
       filter = [];
       hotels.forEach(function (element, index) {
-        var name = (new RegExp(".*" + Helpers.slugify(req.query.name) + ".*", "ig").test(Helpers.slugify(element.name)));
-        var score = ([3,1].indexOf(element.stars) !== -1);
+        var name = false,
+            score = false;
+
+        if(req.query.name !== undefined && req.query.name !== "")
+          name = (new RegExp(".*" + Helpers.slugify(req.query.name) + ".*", "ig").test(Helpers.slugify(element.name)));
+
+        if(Helpers.emptyDatas(req.query.score))
+          score = (req.query.score.indexOf(element.stars) != -1) || (req.query.score.indexOf(element.stars.toString()) != -1);
+
         if (name || score)
           filter.push(element);
       });
@@ -36,7 +43,8 @@ app
     res.send({
       data: filter,
       msj: filter.length > 0 ? Messages.global.success.loadHotels : Messages.global.errors.loadHotels,
-      event: filter.length > 0
+      event: filter.length > 0,
+      query: req.query
     });
   })
 
