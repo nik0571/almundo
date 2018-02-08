@@ -33,6 +33,18 @@
         hotel: "="
       },
       link: function (scope, element, attrs) {
+
+        var ngFor = function (min = 1, max, step = 1) {
+          max = max || 1;
+          var array = [];
+          for(var i = parseInt(min); i <= parseInt(max); i += parseInt(step)) {
+            array.push(i);
+          }
+          return array;
+        };
+
+        scope.stars = ngFor(1,scope.hotel.stars);
+
         angular.element(".row.image", element).css({
           "background-image": "url(images/hotels/"+scope.hotel.image+"), url(images/image-not-found.jpg)"
         });
