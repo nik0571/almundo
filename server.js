@@ -4,6 +4,7 @@
  * @description Instacia e inicializacion del servidor
  */
 
+var ENVIRONMENT = "PRODUCTION";
 var http = require('http');
 var path = require('path');
 var fs = require("fs");
@@ -15,7 +16,7 @@ var app = express();
 var server = http.createServer(app);
 
 app
-  .use(express.static('./app/'))
+  .use(express.static(ENVIRONMENT !== 'PRODUCTION' ? './app/' :'./dist/'))
   .get('/*', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
   })
@@ -49,7 +50,7 @@ app
   })
 
 
-server.listen(3000, "127.0.0.1", function () {
+server.listen(process.env.PORT || 3000, process.env.IP || "127.0.0.1", function () {
   var addr = server.address();
   console.log("Server listening at", addr.address + ":" + addr.port);
 });

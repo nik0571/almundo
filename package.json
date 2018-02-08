@@ -4,6 +4,9 @@
   "description": "Examen de desarrollo Frontend",
   "main": "server.js",
   "scripts": {
+    "start": "node server.min.js",
+    "all-install": "npm install && bower install",
+    "build": "grunt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +26,13 @@
   "homepage": "https://github.com/nik0571/almundo#readme",
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-obfuscator": "^4.0.0"
   }
 }
