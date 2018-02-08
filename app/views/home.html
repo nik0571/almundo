@@ -80,28 +80,9 @@
   </aside>
 
   <div class="container container-hotels">
-    <div class="hotel" ng-repeat="x in hotels">
-      <div class="row image">
-        <img ng-src="images/hotels/{{x.image}}" alt="{{x.name}}">
-      </div>
-      <div class="row info">
-        <h2>{{x.name}}</h2>
-        <div class="container stars">
-          <ng-include src="'icons/filters/star.svg'" ng-repeat="x in [1,2,3]"></ng-include>
-        </div>
-        <div class="container amenities">
-          <img
-            ng-src="icons/amenities/{{ico}}.svg"
-            width="25"
-            ng-repeat="ico in x.amenities"
-            alt="restaurant">
-        </div>
-      </div>
-      <div class="row price">
-        <p>Precio por noche por habitación</p>
-        <p class="special"><span>ARS</span><strong>{{x.price | currency: '':0}}</strong></p>
-        <button type="button">Ver hotel</button>
-      </div>
-    </div>
+    <hotel-card
+      ng-repeat="x in hotels"
+      hotel="x">
+    </hotel-card>
   </div>
 </section>

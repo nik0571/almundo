@@ -169,12 +169,12 @@ body {
 
         &.image {
           width: $tam_image;
-
-          img {
-            display: block;
-            height: auto;
-            width: 100%;
-          }
+          height: 200px;
+          overflow: hidden;
+          position: relative;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
         }
         &.info {
           color: $color_6;
