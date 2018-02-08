@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/nik0571/almundo/issues"
   },
-  "homepage": "https://github.com/nik0571/almundo#readme"
+  "homepage": "https://github.com/nik0571/almundo#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
