@@ -10,7 +10,7 @@
 
   angular
    .module('app')
-   .controller('homeCtrl', ['$scope', '$timeout', '_hotels', homeCtrl])
+   .controller('homeCtrl', ['$scope', '_hotels', homeCtrl])
 
 
    /**
@@ -18,17 +18,43 @@
     * @description Controlador
     * @param {var} $scope
     */
-   function homeCtrl ($scope, $timeout, _hotels) {
+   function homeCtrl ($scope, _hotels) {
     var vm = this;
 
-
+    $scope.filter = {
+      name: "",
+      score: []
+    }
     $scope.hotels = [];
-
 
     //Funciones
     vm._init = _init;
+    vm.filterScore = filterScore;
     vm.getHotels = getHotels;
+    vm.toggleScore = toggleScore;
 
+    /**
+     * @name toggleScore
+     * @param int value
+     * @desc seleccionar puntuacion para filtrar
+     */
+    function toggleScore (value) {
+      if(value !== undefined && value !== "") {
+        if($scope.filter.score.indexOf(value) > -1)
+          $scope.filter.score.splice($scope.filter.score.indexOf(value), 1);
+        else
+          $scope.filter.score.push(value);
+      }
+    }
+
+    /**
+     * @name filterScore
+     * @desc filtro por puntuación
+     * @param object data
+     */
+    function filterScore (data) {
+      return $scope.filter.score.length <= 0 ? data : $scope.filter.score.indexOf(data.stars) !== -1 ? data : false;
+    }
 
     /**
      * @name getHotels
@@ -36,7 +62,7 @@
      */
     function getHotels () {
       return _hotels
-      .getHotels()
+      .getHotels($scope.filter)
       .then(function successCallback (res) {
         console.log("successCallback getHotels", res);
         $scope.hotels = res.data.data;
@@ -50,8 +76,6 @@
      */
     function _init() {
       vm.getHotels();
-      $timeout(function () {
-      },1000)
     }
 
     angular.element(document).ready(vm._init);

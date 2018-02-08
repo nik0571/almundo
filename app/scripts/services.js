@@ -28,7 +28,7 @@
         url: FCServer.url + 'getHotels',
         params: {
           "name"  : filter.name || "",
-          "score" : filter.score || []
+          "score" : []
         }
       });
     };
