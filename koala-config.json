@@ -1,0 +1,13 @@
+{
+  "ignores": [
+    "Gruntfile.js",
+    "node_modules",
+    "material",
+    "app/bower_components",
+    "app/bower_components",
+    "app/css",
+    "app/assets",
+    "app/scripts/vendor",
+    "dist"
+  ]
+}

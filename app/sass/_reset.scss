@@ -1,0 +1,99 @@
+/***************************************************
+ * Reset
+ * @package Sass
+ * @author Naycool Gonzalez <naycoolgonzalez@gmail.com>
+ *         Developer web
+ *
+ * @description: Configuraciones globales
+****************************************************/
+
+* {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-size: $font-size;
+  color: $color_2;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:active,
+  &:hover,
+  &:visited {
+    color: inherit;
+    outline: 0;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+hr {
+  display: block;
+  border: 0;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+strong {
+  font-weight: bold;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+button,
+input,
+input,
+optgroup,
+select,
+textarea {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {}

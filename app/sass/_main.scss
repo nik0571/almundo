@@ -1,0 +1,346 @@
+/**
+ * Estilos generales
+ * @package Sass
+ * @author Naycool Gonzalez <naycoolgonzalez@gmail.com>
+ * @description Estilos generales de la pagina
+ */
+
+body {
+  background-color: $color_3;
+}
+
+#main-header {
+  background-color: $color_4;
+  display: block;
+  padding: 20px 10px;
+}
+
+#home {
+  $bg: $color_1;
+  $padding: 15px 20px;
+  $tam_filter: 350px;
+
+  display: block;
+  margin: 30px auto;
+  position: relative;
+  width: calc(100% - 60px);
+
+  .container-hotels,
+  .filter {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .filter {
+    width: $tam_filter;
+
+    .hide-filters {
+      display: none;
+      opacity: 0;
+    }
+
+    h3 {
+      background-color: $bg;
+      font-size: 1.2em;
+      margin-bottom: 5px;
+      padding: $padding;
+    }
+
+    label.title {
+      color: $color_6;
+      vertical-align: middle;
+    }
+
+    .icon-star,
+    .icon-search {
+      margin-right: 5px;
+      vertical-align: middle;
+      svg {
+        fill: $color_6;
+        width: 20px;
+      }
+    }
+
+    .form {
+      background-color: $bg;
+      font-weight: $font-bold;
+      padding: $padding;
+      position: relative;
+
+      .inputs {
+        margin: 10px auto;
+
+        button,
+        input {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        input {
+          font-size: 1em;
+          margin-right: 10px;
+          padding: 10px;
+          width: calc(100% - 110px);
+        }
+
+        button {
+          font-size: 1.2em;
+          padding: 7px 8px;
+        }
+
+      }
+    }
+
+    .top-score {
+      background-color: $bg;
+      font-weight: $font-bold;
+      margin-top: 5px;
+      padding: $padding;
+      position: relative;
+
+      > .container {
+        margin-top: 20px;
+
+        label {
+          cursor: pointer;
+          display: block;
+          margin-bottom: 15px;
+          svg {
+
+            fill: $color_7;
+          }
+        }
+      }
+    }
+
+    .toggle {
+      background-color: transparent;
+      display: block;
+      height: 20px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 20px;
+
+      &:after {
+        border-bottom: 6px solid $color_6;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        content: '';
+        display: inline-block;
+        height: 0;
+        text-align: center;
+        width: 0;
+      }
+
+      &.hide {
+        &:after {
+          content: '';
+          border-bottom: none;
+          border-top: 6px solid $color_6;
+        }
+      }
+    }
+    .toggle.hide + .container-toggle {
+      display: none;
+    }
+  }
+
+  .container-hotels {
+    display: inline-block;
+    margin-left: 12px;
+    width: calc(100% - (#{$tam_filter} + 20px));
+
+    .hotel {
+      $pad: 10px;
+      $tam_image: 300px;
+
+      background-color: $color_1;
+      box-shadow: 0px 0px 3px 0px rgba(115,110,115,.4);
+      font-size: .7em;
+      height: 100%;
+      margin-bottom: 15px;
+      overflow: hidden;
+      padding: $pad;
+      position: relative;
+
+      .row {
+        display: inline-block;
+        vertical-align: top;
+
+        &.image {
+          width: $tam_image;
+          height: 200px;
+          overflow: hidden;
+          position: relative;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+        &.info {
+          color: $color_6;
+          font-size: .8em;
+          padding: 0 20px;
+          width: calc(55% - (#{$tam_image} / 2 + 5px));
+
+          .stars {
+            margin: 10px auto;
+
+            svg {
+              fill: $color_7;
+              width: 20px;
+            }
+          }
+          .amenities {
+            img {
+              margin: 0 5px;
+            }
+          }
+        }
+        &.price {
+          color: $color_8;
+          height: calc(100% - #{$pad * 2});
+          padding: 25px;
+          position: absolute;
+          text-align: center;
+          width: calc(45% - (#{$tam_image} / 2 + 5px));
+
+          p:first-child {
+            display: block;
+            margin: auto;
+            width: 80%;
+          }
+
+          &:before {
+            border-left: 1px dashed $color_9;
+            content: '';
+            display: block;
+            left: 0;
+            min-height: 100%;
+            position: absolute;
+            top: 0;
+            width: 0;
+          }
+
+          .special {
+            color: $color_10;
+            display: block;
+            font-size: 2em;
+            margin-top: 20px;
+
+            strong,
+            span {
+              display: inline-block;
+              margin: 0 5px;
+              vertical-align: middle;
+            }
+            span {
+              font-weight: $font-light;
+            }
+            strong {
+              font-size: 1.6em;
+            }
+
+          }
+
+          button {
+            display: block;
+            font-size: 1.5em;
+            margin: 15px auto;
+            padding: 10px 5px;
+            width: 100%;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        .row {
+          &.info {
+            width: calc(50% - (#{$tam_image} / 2 + 5px));
+          }
+          &.price {
+            width: calc(50% - (#{$tam_image} / 2 + 5px));
+          }
+        }
+      }
+    }
+
+  }
+
+  @media screen and (max-width: 1200px) {
+
+    .filter {
+      margin-bottom: 10px;
+      width: 100%;
+      > h3 {
+        color: transparent;
+      }
+
+      .hide-filters {
+        color: $color_6;
+        display: block;
+        font-size: 1.2em;
+        opacity: 1;
+        width: 100%;
+
+        &:after {
+          border-bottom: 6px solid $color_6;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          content: '';
+          display: inline-block;
+          height: 0;
+          margin-left: 15px;
+          position: absolute;
+          text-align: center;
+          top: 10px;
+          width: 0;
+        }
+
+      }
+      .hide-filters.hide + .container-toggle-filter {
+        display: none;
+      }
+    }
+
+    .container-hotels {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .container-hotels {
+      width: 100%;
+      display: block;
+
+      .hotel {
+        .row {
+          display: block;
+          margin: auto;
+          max-width: 320px;
+
+          &.image {
+            margin-left: auto;
+            margin-right: auto;
+          }
+          &.info {
+            padding: 10px;
+            width: 100%;
+          }
+          &.price {
+            position: relative;
+            width: 100%;
+
+            &:before {
+              border-top: 1px dashed $color_9;
+              min-height: auto;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
